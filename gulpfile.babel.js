@@ -7,17 +7,11 @@ import postcss from 'gulp-postcss'
 import rename from 'gulp-rename'
 import sourcemaps from 'gulp-sourcemaps'
 import livereload from 'gulp-livereload'
-import rollup from 'gulp-rollup'
 
 // postcss plugins
 import atImport from 'postcss-import'
 import copy from 'postcss-copy'
 import cssnext from 'postcss-cssnext'
-
-// rollup plugins
-import babel from 'rollup-plugin-babel'
-import nodeResolve from 'rollup-plugin-node-resolve'
-import commonjs from 'rollup-plugin-commonjs'
 
 gulp.task('styles', () => {
   return gulp.src('src/styles/main.css')
@@ -39,31 +33,6 @@ gulp.task('styles', () => {
 gulp.task('bundle', () => {
   return gulp.src('src/scripts/main.js')
     .pipe(webpack(require('./webpack.config.js')))
-    .pipe(gulp.dest('src'))
-})
-
-gulp.task('robundle', () => {
-  return gulp.src('src/scripts/main.js', {read: false})
-    .pipe(rollup({
-      format: 'iife',
-      plugins: [
-        nodeResolve({
-          jsnext: true,
-          main: true,
-          skip: ['iconv-lite'],
-          extensions: ['.js']
-        }),
-        commonjs({
-          include: 'node_modules/**'
-        }),
-        babel({
-          runtimeHelpers: true,
-          exclude: 'node_modules/**'
-        })
-      ],
-      sourceMap: true
-    }))
-    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest('src'))
 })
 
