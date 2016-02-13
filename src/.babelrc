@@ -1,8 +1,0 @@
-{
-  "presets": ["es2015-rollup", "stage-0"],
-  "plugins": [
-    "transform-runtime",
-    ["transform-react-jsx", { "pragma": "h" }]
-  ],
-  "compact": false
-}
