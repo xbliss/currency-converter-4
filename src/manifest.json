@@ -20,5 +20,15 @@
     },
     "default_title": "Currency Converter",
     "default_popup": "app.html"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+4",
+        "windows": "Ctrl+Shift+4",
+        "linux": "Ctrl+Shift+4",
+        "mac": "Command+Shift+4"
+      }
+    }
   }
 }
