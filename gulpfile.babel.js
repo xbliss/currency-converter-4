@@ -1,5 +1,5 @@
 import gulp from 'gulp'
-// import del from 'del'
+import del from 'del'
 import webpack from 'webpack-stream'
 
 // gulp plugins
@@ -43,6 +43,10 @@ gulp.task('watch', () => {
 
 gulp.task('reload', () => {
   return livereload.reload()
+})
+
+gulp.task('clean', () => {
+  return del(['.tmp', 'dist'])
 })
 
 gulp.task('build', gulp.series('styles', 'bundle'))
