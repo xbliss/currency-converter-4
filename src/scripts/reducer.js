@@ -10,7 +10,7 @@ export const initialState = {
 export default function reducer (state = initialState, action) {
   switch (action.type) {
     case 'CHANGE_CURRENCY':
-      return Object.assign({}, state, { currency: action.currency, from: action.currency })
+      return Object.assign({}, state, { currency: action.currency })
     case 'LOAD_DATA':
       return Object.assign({}, state, { usd: action.usd, eur: action.eur })
     case 'CHANGE_INPUT_VALUE':

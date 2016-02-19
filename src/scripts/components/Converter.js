@@ -13,13 +13,7 @@ export default class Converter extends Provider {
   }
 
   changeConvertSide () {
-    const _from = this.state.from
-    const _to = this.state.to
-    if (_from !== 'RUB') {
-      swapConverter('RUB', _from)
-    } else if (_from === 'RUB') {
-      swapConverter(_to, 'RUB')
-    }
+    swapConverter(this.state.to, this.state.from)
   }
 
   render () {
@@ -27,10 +21,10 @@ export default class Converter extends Provider {
     const toInputClass = `to ${this.state.to.toLowerCase()}`
     return (
       <div class="converter">
-        <div class={fromInputClass}>
+        <div class={ fromInputClass }>
           <input type="text"
             onInput={ e => changeInputValue(e.target.value) }
-            value={this.state.inputValue}
+            value={ this.state.inputValue }
             placeholder="0"
             autofocus />
         </div>
@@ -38,7 +32,7 @@ export default class Converter extends Provider {
           <i class="fa fa-long-arrow-left"></i>
           <i class="fa fa-long-arrow-right"></i>
         </div>
-        <div class={toInputClass}>
+        <div class={ toInputClass }>
           <input type="text"
             value={ this.convert() }
             placeholder="0"
