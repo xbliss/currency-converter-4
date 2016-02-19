@@ -6,9 +6,11 @@ export default class Converter extends Provider {
   convert () {
     const currencyRate = this.state[this.state.currency.toLowerCase()]
     if (this.state.to === 'RUB') {
-      return Math.round(this.state.inputValue * currencyRate)
+      const result = Math.round(this.state.inputValue * currencyRate)
+      return isNaN(Math.abs(result)) ? 0 : result
     } else {
-      return Math.round(this.state.inputValue / currencyRate)
+      const result = this.state.inputValue / currencyRate
+      return isNaN(Math.abs(result)) ? 0 : result.toFixed(1).replace(/^(\d+\.\d)$/,'$10')
     }
   }
 
