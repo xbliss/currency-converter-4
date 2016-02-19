@@ -4,13 +4,17 @@ import { changeInputValue, swapConverter } from '../actions'
 
 export default class Converter extends Provider {
   convert () {
-    const currencyRate = this.state[this.state.currency.toLowerCase()]
-    if (this.state.to === 'RUB') {
-      const result = Math.round(this.state.inputValue * currencyRate)
-      return isNaN(Math.abs(result)) ? 0 : result
+    if (this.state.inputValue || this.state.inputValue === 0) {
+      const currencyRate = this.state[this.state.currency.toLowerCase()]
+      if (this.state.to === 'RUB') {
+        const result = Math.round(this.state.inputValue * currencyRate)
+        return isNaN(Math.abs(result)) ? 0 : result
+      } else {
+        const result = this.state.inputValue / currencyRate
+        return isNaN(Math.abs(result)) ? 0 : result.toFixed(1).replace(/^(\d+\.\d)$/,'$10')
+      }
     } else {
-      const result = this.state.inputValue / currencyRate
-      return isNaN(Math.abs(result)) ? 0 : result.toFixed(1).replace(/^(\d+\.\d)$/,'$10')
+      return ''
     }
   }
 
