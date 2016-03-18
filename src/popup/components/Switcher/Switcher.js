@@ -4,7 +4,7 @@ import CSSModules from 'react-css-modules'
 import { bindActionCreators } from 'redux'
 import FaUsd from 'react-icons/lib/fa/dollar'
 import FaEur from 'react-icons/lib/fa/eur'
-import * as Actions from '../../shared/actions'
+import * as Actions from '../../../shared/actions'
 import styles from './Switcher.sss'
 
 const mapStateToProps = (state) => {
