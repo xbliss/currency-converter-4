@@ -3,7 +3,12 @@ var fontMagician = require('postcss-font-magician')
 var postcssImport = require('postcss-import')
 
 module.exports = {
+  entry: {
+    background: './src/background/index.js',
+    popup: './src/popup/index.js'
+  },
   output: {
+    path: 'app/scripts',
     filename: '[name].js'
   },
   module: {

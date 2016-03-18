@@ -1,10 +1,10 @@
-import gulp from 'gulp'
-import webpack from 'webpack-stream'
-import named from 'vinyl-named'
+import webpack from 'webpack'
+import webpackConfig from '../webpack.config.js'
 
-export function bundle () {
-  return gulp.src(['src/popup/index.js', 'src/background/index.js'])
-    .pipe(named())
-    .pipe(webpack(require('../webpack.config.js')))
-    .pipe(gulp.dest('app/scripts/'))
+export function bundle (cb) {
+  const config = Object.create(webpackConfig)
+  return webpack(config, (err, status) => {
+    if (err) throw new Error('webpack', err)
+    cb()
+  })
 }
