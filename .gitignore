@@ -1,9 +1,8 @@
 node_modules
-temp
 .tmp
 dist
 package
 .log
 logs
-src/app.css
-src/app.js
+app/scripts
+app/styles
