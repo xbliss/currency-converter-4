@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { Store } from 'react-chromex-redux'
-import Popup from './components/Popup'
+import Popup from './components/Popup/Popup.js'
 
 const store = new Store({
   portName: 'rates'
