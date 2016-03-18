@@ -1,0 +1,28 @@
+.switcher
+  font-size: 2rem
+  display: flex
+
+.currency
+  padding: 10px
+  color: white
+  cursor: pointer
+  flex: 1
+  box-sizing: border-box
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  overflow: hidden
+  transform: translateZ(0)
+  backface-visibility: hidden
+  user-select: none
+
+.usd
+  composes: currency
+  background-color: #85bb65
+
+.eur
+  composes: currency
+  background-color: #f2d86a
+
+.active
+  border-bottom: 5px solid purple
