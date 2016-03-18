@@ -14,13 +14,15 @@ export function styles () {
       atImport(),
       copy({
         src: 'node_modules',
-        dest: 'src',
-        keepRelativePath: false
+        dest: 'app',
+        relativePath (dirname, fileMeta, result, opts) {
+          return opts.dest
+        }
       }),
       cssnext()
     ]))
     .pipe(sourcemaps.write())
-    .pipe(rename('app.css'))
-    .pipe(gulp.dest('src'))
+    .pipe(rename('popup.css'))
+    .pipe(gulp.dest('app/styles/'))
     .pipe(livereload())
 }

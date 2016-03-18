@@ -1,10 +1,10 @@
 import gulp from 'gulp'
 import webpack from 'webpack-stream'
-import livereload from 'gulp-livereload'
+import named from 'vinyl-named'
 
 export function bundle () {
-  return gulp.src('src/scripts/main.js')
+  return gulp.src(['src/scripts/popup.js', 'src/scripts/background.js'])
+    .pipe(named())
     .pipe(webpack(require('../webpack.config.js')))
-    .pipe(gulp.dest('src'))
-    .pipe(livereload())
+    .pipe(gulp.dest('app/scripts/'))
 }
