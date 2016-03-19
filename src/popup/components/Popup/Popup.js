@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Switcher from '../Switcher/Switcher.js'
 import Rate from '../Rate/Rate.js'
+import Converter from '../Converter/Converter.js'
 import { toggleCurrency, fetchData } from '../../../shared/actions'
 import styles from './Popup.sss'
 
@@ -35,7 +36,8 @@ export default class App extends Component {
       <div>
         <Switcher current={ this.props.current } toggleCurrency={ this.props.toggleCurrency } />
         <Rate fetchData={ this.props.fetchData } value={ this.props.current === 'USD' ? this.props.usd : this.props.eur } />
-      </div>
+        <Converter />
+    </div>
     )
   }
 }
