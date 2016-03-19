@@ -1,8 +1,12 @@
 {
   "name": "currency-converter-chrome-extension",
-  "private": true,
-  "engines": {
-    "node": ">=0.8.0"
+  "version": "0.1.0",
+  "description": "Exchange rate chrome extension",
+  "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sadorlovsky/currency-converter-chrome-extension.git"
   },
   "devDependencies": {
     "ava": "^0.12.0",
@@ -54,9 +58,5 @@
     "rollup-plugin-commonjs": "^2.2.1",
     "rollup-plugin-node-resolve": "^1.4.0",
     "webpack-stream": "^3.1.0"
-  },
-  "scripts": {
-    "test": "ava",
-    "build": "rollup app/scripts.babel/api.js -o build/api.js -c rollup.config.js"
   }
 }
