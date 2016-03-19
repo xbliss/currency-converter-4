@@ -1,8 +1,14 @@
 {
   "name": "currency-converter-chrome-extension",
-  "private": true,
+  "version": "0.1.0",
+  "description": "Exchange rate chrome extension",
+  "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sadorlovsky/currency-converter-chrome-extension.git"
+  },
   "scripts": {
-    "test": "ava",
     "lint": "standard --verbose | snazzy"
   },
   "standard": {
