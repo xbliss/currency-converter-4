@@ -8,6 +8,12 @@ export function toggleCurrency (currency) {
   }
 }
 
+export function requestData () {
+  return {
+    type: 'REQUEST_DATA'
+  }
+}
+
 export function loadData (usd, eur) {
   return {
     type: 'LOAD_DATA',
@@ -22,6 +28,7 @@ export function fetchData () {
     if (data) {
       return dispatch(loadData(data.usd, data.eur))
     } else {
+      dispatch(requestData())
       return fetch('https://crossorigin.me/https://meduza.io/api/v3/stock/all/')
         .then(response => {
           return response.json()

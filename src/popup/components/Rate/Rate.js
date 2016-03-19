@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
+import Spinner from 'react-spinkit'
 import styles from './Rate.sss'
 
 @CSSModules(styles)
 export default class Rate extends Component {
   static propTypes = {
+    isFetching: React.PropTypes.bool,
     value: React.PropTypes.number,
     fetchData: React.PropTypes.func
   }
@@ -16,7 +18,10 @@ export default class Rate extends Component {
   render () {
     return (
       <div styleName='rate'>
-        { Math.round(this.props.value) } ₽
+        { this.props.isFetching
+          ? <Spinner spinnerName='three-bounce' noFadeIn />
+          : `${Math.round(this.props.value)} ₽`
+        }
       </div>
     )
   }

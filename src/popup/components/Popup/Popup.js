@@ -11,6 +11,7 @@ import styles from './Popup.sss'
 const mapStateToProps = (state) => {
   return {
     current: state.current,
+    isFetching: state.isFetching,
     usd: state.usd,
     eur: state.eur
   }
@@ -25,6 +26,7 @@ const mapDispatchToProps = (dispatch) => {
 export default class App extends Component {
   static propTypes = {
     current: React.PropTypes.string,
+    isFetching: React.PropTypes.bool,
     usd: React.PropTypes.number,
     eur: React.PropTypes.number,
     toggleCurrency: React.PropTypes.func,
@@ -35,7 +37,7 @@ export default class App extends Component {
     return (
       <div>
         <Switcher current={ this.props.current } toggleCurrency={ this.props.toggleCurrency } />
-        <Rate fetchData={ this.props.fetchData } value={ this.props.current === 'USD' ? this.props.usd : this.props.eur } />
+        <Rate isFetching={ this.props.isFetching } fetchData={ this.props.fetchData } value={ this.props.current === 'USD' ? this.props.usd : this.props.eur } />
         <Converter current={ this.props.current } usd={ this.props.usd } eur={ this.props.eur } />
     </div>
     )
