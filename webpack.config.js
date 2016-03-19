@@ -1,5 +1,4 @@
 var cssnext = require('postcss-cssnext')
-var postcssImport = require('postcss-import')
 
 module.exports = {
   entry: {
@@ -19,16 +18,11 @@ module.exports = {
       },
       {
         test: /\.sss$/,
-        loader: 'style!css?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss?parser=sugarss'
+        loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader?parser=sugarss'
       }
     ]
   },
-  postcss: function (webpack) {
-    return [
-      postcssImport({
-        addDependencyTo: webpack
-      }),
-      cssnext
-    ]
+  postcss: function () {
+    return [cssnext]
   }
 }
