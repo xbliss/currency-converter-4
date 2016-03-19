@@ -28,7 +28,12 @@ export function fetchData () {
         })
         .then(({ usd, eur }) => {
           cache.set('rates', {usd: usd.current, eur: eur.current}, 60)
+          window.localStorage.setItem('latest', JSON.stringify({usd: usd.current, eur: eur.current}))
           return dispatch(loadData(usd.current, eur.current))
+        })
+        .catch(e => {
+          const {usd, eur} = JSON.parse(window.localStorage.getItem('latest'))
+          return dispatch(loadData(usd, eur))
         })
     }
   }
