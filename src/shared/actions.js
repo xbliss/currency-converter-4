@@ -1,4 +1,4 @@
-// import fetch from 'isomorphic-fetch'
+import fetch from 'isomorphic-fetch'
 
 export function toggleCurrency (currency) {
   return {
@@ -14,14 +14,14 @@ export function loadData (usd) {
   }
 }
 
-// export function fetchData () {
-//   return dispatch => {
-//     fetch('https://crossorigin.me/https://meduza.io/api/v3/stock/all/')
-//       .then(response => {
-//         return response.json()
-//       })
-//       .then(({ usd, eur }) => {
-//         dispatch(loadData(usd))
-//       })
-//   }
-// }
+export function fetchData () {
+  return dispatch => {
+    return fetch('https://crossorigin.me/https://meduza.io/api/v3/stock/all/')
+      .then(response => {
+        return response.json()
+      })
+      .then(({ usd, eur }) => {
+        return dispatch(loadData(usd.current))
+      })
+  }
+}

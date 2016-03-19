@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Switcher from '../Switcher/Switcher.js'
 import Rate from '../Rate/Rate.js'
-import { toggleCurrency, loadData } from '../../../shared/actions'
+import { toggleCurrency, loadData, fetchData } from '../../../shared/actions'
 import styles from './Popup.sss'
 
 const mapStateToProps = (state) => {
@@ -15,7 +15,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ toggleCurrency, loadData }, dispatch)
+  return bindActionCreators({ toggleCurrency, loadData, fetchData }, dispatch)
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -25,14 +25,15 @@ export default class App extends Component {
     current: React.PropTypes.string,
     usd: React.PropTypes.number,
     loadData: React.PropTypes.func,
-    toggleCurrency: React.PropTypes.func
+    toggleCurrency: React.PropTypes.func,
+    fetchData: React.PropTypes.func
   }
 
   render () {
     return (
       <div>
         <Switcher current={ this.props.current } toggleCurrency={ this.props.toggleCurrency } />
-        <Rate loadData={ this.props.loadData } usd={ this.props.usd } />
+        <Rate fetchData={ this.props.fetchData } loadData={ this.props.loadData } usd={ this.props.usd } />
       </div>
     )
   }

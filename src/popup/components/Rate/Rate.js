@@ -6,11 +6,12 @@ import styles from './Rate.sss'
 export default class Rate extends Component {
   static propTypes = {
     usd: React.PropTypes.number,
-    loadData: React.PropTypes.func
+    loadData: React.PropTypes.func,
+    fetchData: React.PropTypes.func
   }
 
   componentDidMount () {
-    this.props.loadData(70)
+    this.props.fetchData()
   }
 
   render () {
