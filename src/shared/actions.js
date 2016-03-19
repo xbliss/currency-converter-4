@@ -7,10 +7,11 @@ export function toggleCurrency (currency) {
   }
 }
 
-export function loadData (usd) {
+export function loadData (usd, eur) {
   return {
     type: 'LOAD_DATA',
-    usd
+    usd,
+    eur
   }
 }
 
@@ -21,7 +22,7 @@ export function fetchData () {
         return response.json()
       })
       .then(({ usd, eur }) => {
-        return dispatch(loadData(usd.current))
+        return dispatch(loadData(usd.current, eur.current))
       })
   }
 }

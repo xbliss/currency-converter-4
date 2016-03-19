@@ -5,8 +5,7 @@ import styles from './Rate.sss'
 @CSSModules(styles)
 export default class Rate extends Component {
   static propTypes = {
-    usd: React.PropTypes.number,
-    loadData: React.PropTypes.func,
+    value: React.PropTypes.number,
     fetchData: React.PropTypes.func
   }
 
@@ -17,7 +16,7 @@ export default class Rate extends Component {
   render () {
     return (
       <div styleName='rate'>
-        { this.props.usd }
+        { Math.round(this.props.value) } ₽
       </div>
     )
   }

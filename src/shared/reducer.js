@@ -1,6 +1,7 @@
 const initialState = {
   current: 'USD',
-  usd: 0
+  usd: 0,
+  eur: 0
 }
 
 export default function reducer (state = initialState, action) {
@@ -8,7 +9,7 @@ export default function reducer (state = initialState, action) {
     case 'TOGGLE_CURRENCY':
       return Object.assign({}, state, { current: action.currency.toUpperCase() })
     case 'LOAD_DATA':
-      return Object.assign({}, state, { usd: action.usd })
+      return Object.assign({}, state, { usd: action.usd, eur: action.eur })
     default:
       return state
   }

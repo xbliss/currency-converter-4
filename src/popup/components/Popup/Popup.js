@@ -4,18 +4,19 @@ import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import Switcher from '../Switcher/Switcher.js'
 import Rate from '../Rate/Rate.js'
-import { toggleCurrency, loadData, fetchData } from '../../../shared/actions'
+import { toggleCurrency, fetchData } from '../../../shared/actions'
 import styles from './Popup.sss'
 
 const mapStateToProps = (state) => {
   return {
     current: state.current,
-    usd: state.usd
+    usd: state.usd,
+    eur: state.eur
   }
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ toggleCurrency, loadData, fetchData }, dispatch)
+  return bindActionCreators({ toggleCurrency, fetchData }, dispatch)
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -24,7 +25,7 @@ export default class App extends Component {
   static propTypes = {
     current: React.PropTypes.string,
     usd: React.PropTypes.number,
-    loadData: React.PropTypes.func,
+    eur: React.PropTypes.number,
     toggleCurrency: React.PropTypes.func,
     fetchData: React.PropTypes.func
   }
@@ -33,7 +34,7 @@ export default class App extends Component {
     return (
       <div>
         <Switcher current={ this.props.current } toggleCurrency={ this.props.toggleCurrency } />
-        <Rate fetchData={ this.props.fetchData } loadData={ this.props.loadData } usd={ this.props.usd } />
+        <Rate fetchData={ this.props.fetchData } value={ this.props.current === 'USD' ? this.props.usd : this.props.eur } />
       </div>
     )
   }
