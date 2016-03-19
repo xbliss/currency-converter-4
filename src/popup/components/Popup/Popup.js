@@ -36,7 +36,7 @@ export default class App extends Component {
       <div>
         <Switcher current={ this.props.current } toggleCurrency={ this.props.toggleCurrency } />
         <Rate fetchData={ this.props.fetchData } value={ this.props.current === 'USD' ? this.props.usd : this.props.eur } />
-        <Converter />
+        <Converter current={ this.props.current } usd={ this.props.usd } eur={ this.props.eur } />
     </div>
     )
   }
