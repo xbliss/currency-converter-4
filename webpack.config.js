@@ -1,5 +1,4 @@
 var cssnext = require('postcss-cssnext')
-var fontMagician = require('postcss-font-magician')
 var postcssImport = require('postcss-import')
 
 module.exports = {
@@ -29,8 +28,7 @@ module.exports = {
       postcssImport({
         addDependencyTo: webpack
       }),
-      cssnext,
-      fontMagician
+      cssnext
     ]
   }
 }
