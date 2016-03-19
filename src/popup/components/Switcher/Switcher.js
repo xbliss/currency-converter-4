@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import CSSModules from 'react-css-modules'
+import classnames from 'classnames'
 import { bindActionCreators } from 'redux'
 import FaUsd from 'react-icons/lib/fa/dollar'
 import FaEur from 'react-icons/lib/fa/eur'
-import * as Actions from '../../../shared/actions'
+import { toggleCurrency } from '../../../shared/actions'
 import styles from './Switcher.sss'
 
 const mapStateToProps = (state) => {
@@ -14,7 +15,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators(Actions, dispatch)
+  return bindActionCreators({ toggleCurrency }, dispatch)
 }
 
 @connect(mapStateToProps, mapDispatchToProps)
@@ -28,10 +29,18 @@ export default class Switcher extends Component {
   render () {
     return (
       <div styleName='switcher'>
-        <div styleName='usd' onClick={ () => this.props.toggleCurrency('USD') }>
+        <div
+          className={
+            this.props.current === 'USD' ? classnames(styles.usd, styles.active) : classnames(styles.usd)
+          }
+          onClick={ () => this.props.toggleCurrency('USD') }>
           <FaUsd />
         </div>
-        <div styleName='eur' onClick={ () => this.props.toggleCurrency('EUR') }>
+        <div
+          className={
+            this.props.current === 'EUR' ? classnames(styles.eur, styles.active) : classnames(styles.eur)
+          }
+          onClick={ () => this.props.toggleCurrency('EUR') }>
           <FaEur />
         </div>
       </div>
