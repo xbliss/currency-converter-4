@@ -17,9 +17,6 @@
     "parser": "babel-eslint",
     "globals": [
       "chrome"
-    ],
-    "ignore": [
-      "/app/"
     ]
   },
   "dependencies": {
