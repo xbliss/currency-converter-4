@@ -1,7 +1,7 @@
 {
   "name": "currency-converter-chrome-extension",
-  "version": "0.1.0",
-  "description": "Exchange rate chrome extension",
+  "version": "0.2.0",
+  "description": "Currency converter extension for chrome",
   "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
   "license": "MIT",
   "repository": {
