@@ -1,3 +1,4 @@
+var webpack = require('webpack')
 var cssnext = require('postcss-cssnext')
 
 module.exports = {
@@ -28,5 +29,12 @@ module.exports = {
   },
   postcss: function () {
     return [cssnext]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': JSON.stringify('development')
+      }
+    })
+  ]
 }
