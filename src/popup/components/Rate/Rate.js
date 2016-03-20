@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import Spinner from 'react-spinkit'
+import FaRouble from 'react-icons/lib/fa/rouble'
 import styles from './Rate.sss'
 
 @CSSModules(styles)
@@ -20,7 +21,7 @@ export default class Rate extends Component {
       <div styleName='rate'>
         { this.props.isFetching
           ? <Spinner spinnerName='three-bounce' noFadeIn />
-          : `${Math.round(this.props.value)} ₽`
+        : <div>{ Math.round(this.props.value) }<FaRouble styleName='rub' /></div>
         }
       </div>
     )
