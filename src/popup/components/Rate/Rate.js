@@ -19,9 +19,9 @@ export default class Rate extends Component {
   render () {
     return (
       <div styleName='rate'>
-        { this.props.isFetching
+        {this.props.isFetching
           ? <Spinner spinnerName='three-bounce' noFadeIn />
-        : <div>{ Math.round(this.props.value) }<FaRouble styleName='rub' /></div>
+          : <div>{Math.round(this.props.value)}<FaRouble styleName='rub' /></div>
         }
       </div>
     )

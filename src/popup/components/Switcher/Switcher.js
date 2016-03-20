@@ -19,14 +19,14 @@ export default class Switcher extends Component {
           className={
             this.props.current === 'USD' ? classnames(styles.usd, styles.active) : classnames(styles.usd)
           }
-          onClick={ () => this.props.toggleCurrency('USD') }>
+          onClick={() => this.props.toggleCurrency('USD')}>
           <FaUsd /> USD
         </div>
         <div
           className={
             this.props.current === 'EUR' ? classnames(styles.eur, styles.active) : classnames(styles.eur)
           }
-          onClick={ () => this.props.toggleCurrency('EUR') }>
+          onClick={() => this.props.toggleCurrency('EUR')}>
           <FaEur /> EUR
         </div>
       </div>

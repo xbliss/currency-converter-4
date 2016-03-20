@@ -23,14 +23,14 @@ export function loadData (usd, eur) {
 }
 
 export function fetchData () {
-  return dispatch => {
+  return (dispatch) => {
     const data = cache.get('rates')
     if (data) {
       return dispatch(loadData(data.usd, data.eur))
     } else {
       dispatch(requestData())
       return fetch('https://crossorigin.me/https://meduza.io/api/v3/stock/all/')
-        .then(response => {
+        .then((response) => {
           return response.json()
         })
         .then(({ usd, eur }) => {
@@ -38,7 +38,7 @@ export function fetchData () {
           window.localStorage.setItem('latest', JSON.stringify({usd: usd.current, eur: eur.current}))
           return dispatch(loadData(usd.current, eur.current))
         })
-        .catch(e => {
+        .catch((e) => {
           const {usd, eur} = JSON.parse(window.localStorage.getItem('latest'))
           return dispatch(loadData(usd, eur))
         })

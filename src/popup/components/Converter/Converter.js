@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import FaArrowLeft from 'react-icons/lib/fa/arrow-left'
-import FaArrowRight from'react-icons/lib/fa/arrow-right'
+import FaArrowRight from 'react-icons/lib/fa/arrow-right'
 import { isNaN, toNumber } from 'lodash'
 import styles from './Converter.sss'
 
@@ -41,12 +41,12 @@ export default class Converter extends Component {
   render () {
     return (
       <div styleName='converter'>
-        <input autoFocus placeholder='0' styleName='input' onChange={ (e) => this.changeInput(e.target.value) } />
+        <input autoFocus placeholder='0' styleName='input' onChange={(e) => this.changeInput(e.target.value)} />
         <div styleName='swap'>
           <FaArrowLeft styleName='left' />
           <FaArrowRight styleName='right' />
         </div>
-        <input styleName='input' value={ Math.round(this.convert()) } />
+        <input styleName='input' value={Math.round(this.convert())} />
       </div>
     )
   }

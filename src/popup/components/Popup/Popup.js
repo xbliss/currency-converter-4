@@ -36,10 +36,10 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <Switcher current={ this.props.current } toggleCurrency={ this.props.toggleCurrency } />
-        <Rate isFetching={ this.props.isFetching } fetchData={ this.props.fetchData } value={ this.props.current === 'USD' ? this.props.usd : this.props.eur } />
-        <Converter current={ this.props.current } usd={ this.props.usd } eur={ this.props.eur } />
-    </div>
+        <Switcher current={this.props.current} toggleCurrency={this.props.toggleCurrency} />
+        <Rate isFetching={this.props.isFetching} fetchData={this.props.fetchData} value={this.props.current === 'USD' ? this.props.usd : this.props.eur} />
+        <Converter current={this.props.current} usd={this.props.usd} eur={this.props.eur} />
+      </div>
     )
   }
 }
