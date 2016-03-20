@@ -41,7 +41,7 @@ export default class Converter extends Component {
   render () {
     return (
       <div styleName='converter'>
-        <input autoFocus styleName='input' onChange={ (e) => this.changeInput(e.target.value) } />
+        <input autoFocus placeholder='0' styleName='input' onChange={ (e) => this.changeInput(e.target.value) } />
         <div styleName='swap'>
           <FaArrowLeft styleName='left' />
           <FaArrowRight styleName='right' />
