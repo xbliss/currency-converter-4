@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import CSSModules from 'react-css-modules'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import Switcher from '../Switcher/Switcher.js'
+import Switch from '../Switch/Switch.js'
 import Rate from '../Rate/Rate.js'
 import Converter from '../Converter/Converter.js'
 import { toggleCurrency, fetchData } from '../../../shared/actions'
@@ -36,7 +36,7 @@ export default class App extends Component {
   render () {
     return (
       <div>
-        <Switcher current={this.props.current} toggleCurrency={this.props.toggleCurrency} />
+        <Switch current={this.props.current} toggleCurrency={this.props.toggleCurrency} />
         <Rate isFetching={this.props.isFetching} fetchData={this.props.fetchData} value={this.props.current === 'USD' ? this.props.usd : this.props.eur} />
         <Converter current={this.props.current} usd={this.props.usd} eur={this.props.eur} />
       </div>

@@ -3,10 +3,10 @@ import CSSModules from 'react-css-modules'
 import classnames from 'classnames'
 import FaUsd from 'react-icons/lib/fa/dollar'
 import FaEur from 'react-icons/lib/fa/eur'
-import styles from './Switcher.sss'
+import styles from './Switch.sss'
 
 @CSSModules(styles)
-export default class Switcher extends Component {
+export default class Switch extends Component {
   static propTypes = {
     current: React.PropTypes.string,
     toggleCurrency: React.PropTypes.func
@@ -14,7 +14,7 @@ export default class Switcher extends Component {
 
   render () {
     return (
-      <div styleName='switcher'>
+      <div styleName='switch'>
         <div
           className={
             this.props.current === 'USD' ? classnames(styles.usd, styles.active) : classnames(styles.usd)
