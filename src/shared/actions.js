@@ -29,7 +29,7 @@ export function fetchData () {
       return dispatch(loadData(data.usd, data.eur))
     } else {
       dispatch(requestData())
-      return fetch('https://crossorigin.me/https://meduza.io/api/v3/stock/all/')
+      return fetch('https://meduza.io/api/v3/stock/all/')
         .then((response) => {
           return response.json()
         })

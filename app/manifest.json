@@ -28,5 +28,8 @@
         "mac": "Command+Shift+4"
       }
     }
-  }
+  },
+  "permissions": [
+    "https://meduza.io/api/v3/stock/all/"
+  ]
 }
