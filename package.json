@@ -1,12 +1,12 @@
 {
-  "name": "currency-converter-chrome-extension",
+  "name": "@sadorlovsky/currency-converter",
   "version": "0.4.0",
   "description": "Currency converter extension for chrome",
   "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sadorlovsky/currency-converter-chrome-extension.git"
+    "url": "https://github.com/sadorlovsky/currency-converter.git"
   },
   "scripts": {
     "lint": "standard --verbose | snazzy",

@@ -15,7 +15,7 @@ Link to Chrome Web Store will appear here soon.
 ## Develop
 
 ```bash
-git clone https://github.com/sadorlovsky/currency-converter-chrome-extension.git
+git clone https://github.com/sadorlovsky/currency-converter.git
 npm install
 npm start # run webpack in watch mode
 ```
