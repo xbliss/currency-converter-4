@@ -10,7 +10,8 @@ export default class Converter extends Component {
   static propTypes = {
     usd: React.PropTypes.number,
     eur: React.PropTypes.number,
-    current: React.PropTypes.string
+    current: React.PropTypes.string,
+    accuracy: React.PropTypes.bool
   }
 
   constructor (props) {
@@ -39,6 +40,7 @@ export default class Converter extends Component {
   }
 
   render () {
+    const value = () => this.props.accuracy ? this.convert().toFixed(2) : Math.round(this.convert())
     return (
       <div styleName='converter'>
         <input autoFocus placeholder='0' styleName='input' onChange={(e) => this.changeInput(e.target.value)} />
@@ -46,7 +48,7 @@ export default class Converter extends Component {
           <FaArrowLeft styleName='left' />
           <FaArrowRight styleName='right' />
         </div>
-        <input styleName='input' value={Math.round(this.convert())} />
+        <input styleName='input' value={value()} />
       </div>
     )
   }

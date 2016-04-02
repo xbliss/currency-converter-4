@@ -8,6 +8,12 @@ export function toggleCurrency (currency) {
   }
 }
 
+export function toggleAccuracy () {
+  return {
+    type: 'TOGGLE_ACCURACY'
+  }
+}
+
 export function requestData () {
   return {
     type: 'REQUEST_DATA'

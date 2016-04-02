@@ -7,6 +7,8 @@ import styles from './Rate.sss'
 @CSSModules(styles)
 export default class Rate extends Component {
   static propTypes = {
+    accuracy: React.PropTypes.bool,
+    toggleAccuracy: React.PropTypes.func,
     isFetching: React.PropTypes.bool,
     value: React.PropTypes.number,
     fetchData: React.PropTypes.func
@@ -19,7 +21,8 @@ export default class Rate extends Component {
   render () {
     const showSpinner = () => <Spinner spinnerName='three-bounce' noFadeIn />
     const showValue = () => {
-      return <div>{Math.round(this.props.value)}<FaRouble styleName='rub' /></div>
+      const value = this.props.accuracy ? this.props.value.toFixed(2) : Math.round(this.props.value)
+      return <div onClick={() => this.props.toggleAccuracy()}>{value}<FaRouble styleName='rub' /></div>
     }
 
     return (
