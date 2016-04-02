@@ -17,12 +17,14 @@ export default class Rate extends Component {
   }
 
   render () {
+    const showSpinner = () => <Spinner spinnerName='three-bounce' noFadeIn />
+    const showValue = () => {
+      return <div>{Math.round(this.props.value)}<FaRouble styleName='rub' /></div>
+    }
+
     return (
       <div styleName='rate'>
-        {this.props.isFetching
-          ? <Spinner spinnerName='three-bounce' noFadeIn />
-          : <div>{Math.round(this.props.value)}<FaRouble styleName='rub' /></div>
-        }
+        {this.props.isFetching ? showSpinner() : showValue()}
       </div>
     )
   }
