@@ -40,7 +40,7 @@ export default class App extends Component {
       <div>
         <Switch current={this.props.current} toggleCurrency={this.props.toggleCurrency} />
         <Rate toggleAccuracy={this.props.toggleAccuracy} isFetching={this.props.isFetching} fetchData={this.props.fetchData} accuracy={this.props.accuracy} value={this.props.current === 'USD' ? this.props.usd : this.props.eur} />
-        <Converter current={this.props.current} usd={this.props.usd} eur={this.props.eur} />
+        <Converter current={this.props.current} usd={this.props.usd} eur={this.props.eur} accuracy={this.props.accuracy} />
       </div>
     )
   }
