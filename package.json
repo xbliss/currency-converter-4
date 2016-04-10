@@ -39,7 +39,9 @@
     "react-css-modules": "^3.7.6",
     "react-dom": "^0.14.8",
     "react-icons": "^1.0.3",
+    "react-redux": "^4.4.2",
     "react-spinkit": "^1.1.4",
+    "redux": "^3.4.0",
     "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
@@ -62,6 +64,7 @@
     "postcss-loader": "^0.8.2",
     "snazzy": "^3.0.0",
     "style-loader": "^0.13.1",
-    "sugarss": "^0.1.2"
+    "sugarss": "^0.1.2",
+    "webpack": "^1.12.14"
   }
 }
