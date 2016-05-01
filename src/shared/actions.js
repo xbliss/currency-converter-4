@@ -4,7 +4,9 @@ import cache from 'lscache'
 export function toggleCurrency (currency) {
   return {
     type: 'TOGGLE_CURRENCY',
-    currency
+    payload: {
+      currency
+    }
   }
 }
 
@@ -23,8 +25,10 @@ export function requestData () {
 export function loadData (usd, eur) {
   return {
     type: 'LOAD_DATA',
-    usd,
-    eur
+    payload: {
+      usd,
+      eur
+    }
   }
 }
 
