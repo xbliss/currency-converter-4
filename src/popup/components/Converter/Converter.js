@@ -35,13 +35,16 @@ export default class Converter extends Component {
     }, 0)
   }
 
+  handleClick () {
+    this.props.doSwap()
+  }
+
   convert () {
-    if (this.props.current === 'USD') {
-      return this.state.input * this.props.usd
-    } else if (this.props.current === 'EUR') {
-      return this.state.input * this.props.eur
+    const rate = this.props[this.props.current.toLowerCase()]
+    if (!this.props.swap) {
+      return this.state.input * rate
     } else {
-      return this.state.input
+      return this.state.input / rate
     }
   }
 
@@ -56,7 +59,7 @@ export default class Converter extends Component {
           onChange={(e) => this.handleChange(e.target.value)}
           onBlur={(e) => this.handleBlur(e.target)}
         />
-        <div styleName='swap'>
+        <div styleName='swap' onClick={(e) => this.handleClick()}>
           <FaArrowLeft styleName='left' />
           <FaArrowRight styleName='right' />
         </div>

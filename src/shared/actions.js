@@ -55,3 +55,9 @@ export function fetchData () {
     }
   }
 }
+
+export function doSwap () {
+  return {
+    type: 'SWAP'
+  }
+}
