@@ -21,12 +21,18 @@ export default class Converter extends Component {
     }
   }
 
-  changeInput (value) {
+  handleChange (value) {
     if (!isNaN(toNumber(value))) {
       this.setState({
         input: toNumber(value)
       })
     }
+  }
+
+  handleBlur (target) {
+    setTimeout(() => {
+      target.focus()
+    }, 0)
   }
 
   convert () {
@@ -43,7 +49,13 @@ export default class Converter extends Component {
     const value = () => this.props.accuracy ? this.convert().toFixed(2) : Math.round(this.convert())
     return (
       <div styleName='converter'>
-        <input autoFocus placeholder='0' styleName='input' onChange={(e) => this.changeInput(e.target.value)} />
+        <input
+          autoFocus
+          placeholder='0'
+          styleName='input'
+          onChange={(e) => this.handleChange(e.target.value)}
+          onBlur={(e) => this.handleBlur(e.target)}
+        />
         <div styleName='swap'>
           <FaArrowLeft styleName='left' />
           <FaArrowRight styleName='right' />
