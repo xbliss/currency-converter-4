@@ -27,6 +27,9 @@
   align-items: center
   justify-content: space-around
 
+.swap:active
+  background-color: color(#442b48 lightness(30%))
+
 .swap:hover .left
   transform: translateX(-5px)
 
@@ -37,3 +40,11 @@
   transform: translateZ(0)
   backface-visibility: hidden
   transition: transform .3s cubic-bezier(0.645, 0.045, 0.355, 1)
+
+.icon
+  background-color: color(#442b48 lightness(30%))
+  color: #fff
+  display: flex
+  align-items: center
+  justify-content: center
+  height: 100%

@@ -3,7 +3,8 @@ const initialState = {
   current: 'USD',
   accuracy: false,
   usd: 0,
-  eur: 0
+  eur: 0,
+  swap: false
 }
 
 export default function reducer (state = initialState, action) {
@@ -16,6 +17,8 @@ export default function reducer (state = initialState, action) {
       return { ...state, isFetching: true }
     case 'LOAD_DATA':
       return { ...state, usd: action.payload.usd, eur: action.payload.eur, isFetching: false }
+    case 'SWAP':
+      return { ...state, swap: !state.swap }
     default:
       return state
   }
