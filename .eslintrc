@@ -1,0 +1,7 @@
+{
+  "extends": [
+    "@sadorlovsky",
+    "@sadorlovsky/eslint-config/ava",
+    "@sadorlovsky/eslint-config/react"
+  ]
+}
