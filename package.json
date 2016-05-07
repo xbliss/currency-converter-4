@@ -10,7 +10,7 @@
   },
   "scripts": {
     "lint": "eslint src test",
-    "test": "ava",
+    "test": "nyc ava",
     "start": "webpack --config webpack.dev.config --watch",
     "build:dev": "webpack --config webpack.dev.config",
     "build:prod": "NODE_ENV=production webpack --config webpack.prod.config -p",
@@ -60,6 +60,7 @@
     "eslint-plugin-react": "^5.0.1",
     "husky": "^0.11.4",
     "nock": "^8.0.0",
+    "nyc": "^6.4.3",
     "postcss": "^5.0.20",
     "postcss-cssnext": "^2.5.1",
     "postcss-loader": "^0.9.1",
