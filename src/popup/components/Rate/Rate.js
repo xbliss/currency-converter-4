@@ -6,14 +6,6 @@ import styles from './Rate.sss'
 
 @css(styles)
 export default class Rate extends Component {
-  static propTypes = {
-    accuracy: React.PropTypes.bool,
-    toggleAccuracy: React.PropTypes.func,
-    isFetching: React.PropTypes.bool,
-    value: React.PropTypes.number,
-    fetchData: React.PropTypes.func
-  }
-
   componentDidMount () {
     this.props.fetchData()
   }
