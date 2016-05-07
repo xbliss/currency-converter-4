@@ -1,5 +1,5 @@
-var webpack = require('webpack')
-var cssnext = require('postcss-cssnext')
+const webpack = require('webpack')
+const cssnext = require('postcss-cssnext')
 
 module.exports = {
   entry: {
@@ -27,7 +27,7 @@ module.exports = {
       }
     ]
   },
-  postcss: function () {
+  postcss () {
     return [cssnext]
   },
   plugins: [
