@@ -10,6 +10,7 @@
   },
 
   "rules": {
+    "complexity": "off",
     "no-extra-parens": ["error", "functions"]
   }
 }
