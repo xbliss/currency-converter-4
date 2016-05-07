@@ -1,7 +1,5 @@
 # Currency Converter
 
-[![js-standard-style](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
-
 Chrome extension for converting from USD and EUR to RUB by current exchange rate.
 
 ![](http://i.imgur.com/F8bLKwT.jpg)
