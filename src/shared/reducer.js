@@ -10,13 +10,18 @@ const initialState = {
 export default function reducer (state = initialState, action) {
   switch (action.type) {
     case 'TOGGLE_CURRENCY':
-      return { ...state, current: action.payload.currency.toUpperCase() }
+      return { ...state, current: action.payload }
     case 'TOGGLE_ACCURACY':
       return { ...state, accuracy: !state.accuracy }
-    case 'REQUEST_DATA':
+    case 'FETCH_REQUEST':
       return { ...state, isFetching: true }
-    case 'LOAD_DATA':
-      return { ...state, usd: action.payload.usd, eur: action.payload.eur, isFetching: false }
+    case 'FETCH_SUCCESS':
+      return {
+        ...state,
+        usd: action.payload.usd.current,
+        eur: action.payload.eur.current,
+        isFetching: false
+      }
     case 'SWAP':
       return { ...state, swap: !state.swap }
     default:
