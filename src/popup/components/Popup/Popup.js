@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import css from 'react-css-modules'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
@@ -23,32 +23,30 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ toggleCurrency, toggleAccuracy, fetchData, doSwap }, dispatch)
 }
 
-@connect(mapStateToProps, mapDispatchToProps)
-@css(styles)
-export default class App extends Component {
-  render () {
-    return (
-      <div>
-        <Switch
-          current={this.props.current}
-          toggleCurrency={this.props.toggleCurrency}
-        />
-        <Rate
-          toggleAccuracy={this.props.toggleAccuracy}
-          isFetching={this.props.isFetching}
-          fetchData={this.props.fetchData}
-          accuracy={this.props.accuracy}
-          value={this.props.current === 'USD' ? this.props.usd : this.props.eur}
-        />
-        <Converter
-          current={this.props.current}
-          usd={this.props.usd}
-          eur={this.props.eur}
-          accuracy={this.props.accuracy}
-          doSwap={this.props.doSwap}
-          swap={this.props.swap}
-        />
-      </div>
-    )
-  }
+const App = props => {
+  return (
+    <div>
+      <Switch
+        current={props.current}
+        toggleCurrency={props.toggleCurrency}
+      />
+      <Rate
+        toggleAccuracy={props.toggleAccuracy}
+        isFetching={props.isFetching}
+        fetchData={props.fetchData}
+        accuracy={props.accuracy}
+        value={props.current === 'USD' ? props.usd : props.eur}
+      />
+      <Converter
+        current={props.current}
+        usd={props.usd}
+        eur={props.eur}
+        accuracy={props.accuracy}
+        doSwap={props.doSwap}
+        swap={props.swap}
+      />
+    </div>
+  )
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(css(styles)(App))
