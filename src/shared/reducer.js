@@ -15,8 +15,8 @@ const reducer = handleActions({
   'FETCH_REQUEST': state => ({ ...state, isFetching: true }),
   'FETCH_SUCCESS': (state, action) => ({
     ...state,
-    usd: action.payload.usd.current,
-    eur: action.payload.eur.current,
+    usd: action.payload.usd,
+    eur: action.payload.eur,
     isFetching: false
   }),
   'SWAP': state => ({ ...state, swap: !state.swap })

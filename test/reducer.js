@@ -80,12 +80,8 @@ test('fetch success', t => {
   const action = {
     type: 'FETCH_SUCCESS',
     payload: {
-      usd: {
-        current: 65.945
-      },
-      eur: {
-        current: 75.945
-      }
+      usd: 65.945,
+      eur: 75.945
     }
   }
   const expected = {

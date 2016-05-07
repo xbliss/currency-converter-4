@@ -48,12 +48,8 @@ test('fetch data success', async t => {
     { type: 'FETCH_REQUEST' },
     { type: 'FETCH_SUCCESS',
       payload: {
-        usd: {
-          current: 65.945
-        },
-        eur: {
-          current: 75.945
-        }
+        usd: 65.945,
+        eur: 75.945
       }
     }
   ]
