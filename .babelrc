@@ -5,5 +5,18 @@
     "transform-decorators-legacy"
   ],
   "compact": false,
-  "sourceMaps": "inline"
+  "sourceMaps": "inline",
+  "env": {
+    "TEST": {
+      "plugins": [
+        [
+          "babel-plugin-webpack-loaders",
+          {
+            "config": "${CONFIG}",
+            "verbose": false
+          }
+        ]
+      ]
+    }
+  }
 }
