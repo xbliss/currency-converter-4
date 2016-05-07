@@ -3,5 +3,13 @@
     "@sadorlovsky",
     "@sadorlovsky/eslint-config/ava",
     "@sadorlovsky/eslint-config/react"
-  ]
+  ],
+
+  "settings": {
+    "import/ignore": ["node_modules", ".(css|sss)$"]
+  },
+
+  "rules": {
+    "no-extra-parens": ["error", "functions"]
+  }
 }

@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
+import css from 'react-css-modules'
 import Spinner from 'react-spinkit'
 import FaRouble from 'react-icons/lib/fa/rouble'
 import styles from './Rate.sss'
 
-@CSSModules(styles)
+@css(styles)
 export default class Rate extends Component {
   static propTypes = {
     accuracy: React.PropTypes.bool,

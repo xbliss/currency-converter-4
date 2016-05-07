@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CSSModules from 'react-css-modules'
+import css from 'react-css-modules'
 import FaArrowLeft from 'react-icons/lib/fa/arrow-left'
 import FaArrowRight from 'react-icons/lib/fa/arrow-right'
 import FaUsd from 'react-icons/lib/fa/dollar'
@@ -8,15 +8,8 @@ import FaRouble from 'react-icons/lib/fa/rouble'
 import { isNaN, toNumber } from 'lodash'
 import styles from './Converter.sss'
 
-@CSSModules(styles)
+@css(styles)
 export default class Converter extends Component {
-  static propTypes = {
-    usd: React.PropTypes.number,
-    eur: React.PropTypes.number,
-    current: React.PropTypes.string,
-    accuracy: React.PropTypes.bool
-  }
-
   constructor (props) {
     super(props)
     this.state = {
@@ -47,9 +40,8 @@ export default class Converter extends Component {
     if (!this.props.swap) {
       const result = this.state.input * rate
       return this.props.accuracy ? result.toFixed(2) : Math.round(result)
-    } else {
-      return this.reverseConvert()
     }
+    return this.reverseConvert()
   }
 
   reverseConvert () {
@@ -71,10 +63,10 @@ export default class Converter extends Component {
           autoFocus
           placeholder='0'
           styleName='input'
-          onChange={(e) => this.handleChange(e.target.value)}
-          onBlur={(e) => this.handleBlur(e.target)}
+          onChange={e => this.handleChange(e.target.value)}
+          onBlur={e => this.handleBlur(e.target)}
         />
-        <div styleName='swap' onClick={(e) => this.handleClick()}>
+        <div styleName='swap' onClick={() => this.handleClick()}>
           <FaArrowLeft styleName='left' />
           <FaArrowRight styleName='right' />
         </div>

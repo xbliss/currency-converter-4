@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
-import Popup from './components/Popup/Popup.js'
 import reducer from '../shared/reducer'
+import Popup from './components/Popup/Popup'
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
