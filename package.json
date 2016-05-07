@@ -9,7 +9,7 @@
     "url": "https://github.com/sadorlovsky/currency-converter.git"
   },
   "scripts": {
-    "lint": "standard --verbose | snazzy",
+    "lint": "eslint src test",
     "test": "ava",
     "start": "webpack --config webpack.dev.config --watch",
     "build:dev": "webpack --config webpack.dev.config",
@@ -21,12 +21,6 @@
   "ava": {
     "require": [
       "babel-register"
-    ]
-  },
-  "standard": {
-    "parser": "babel-eslint",
-    "globals": [
-      "chrome"
     ]
   },
   "dependencies": {
@@ -45,9 +39,10 @@
     "redux-thunk": "^2.0.1"
   },
   "devDependencies": {
+    "@sadorlovsky/eslint-config": "^0.5.0",
     "ava": "^0.14.0",
     "babel-core": "^6.7.7",
-    "babel-eslint": "^6.0.4",
+    "babel-eslint": "^6.0.3",
     "babel-loader": "^6.2.4",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-react-jsx": "^6.7.4",
@@ -58,11 +53,14 @@
     "babel-register": "^6.7.2",
     "bestzip": "^1.1.3",
     "css-loader": "^0.23.1",
+    "eslint": "^2.9.0",
+    "eslint-plugin-ava": "^2.3.1",
+    "eslint-plugin-import": "^1.7.0",
+    "eslint-plugin-react": "^5.0.1",
     "husky": "^0.11.4",
     "postcss": "^5.0.20",
     "postcss-cssnext": "^2.5.1",
     "postcss-loader": "^0.9.1",
-    "snazzy": "^3.0.1",
     "style-loader": "^0.13.1",
     "sugarss": "^0.1.3",
     "webpack": "^1.13.0"
