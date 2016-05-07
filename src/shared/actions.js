@@ -1,62 +1,28 @@
+import { createAction } from 'redux-actions'
 import fetch from 'isomorphic-fetch'
 import cache from 'lscache'
 
-export function toggleCurrency (currency) {
-  return {
-    type: 'TOGGLE_CURRENCY',
-    payload: {
-      currency
-    }
-  }
-}
+export const toggleAccuracy = createAction('TOGGLE_ACCURACY')
+export const toggleCurrency = createAction('TOGGLE_CURRENCY', currency => currency)
+export const doSwap = createAction('SWAP')
 
-export function toggleAccuracy () {
-  return {
-    type: 'TOGGLE_ACCURACY'
-  }
-}
+const fetchRequest = createAction('FETCH_REQUEST')
+const fetchSuccess = createAction('FETCH_SUCCESS')
+const fetchFailure = createAction('FETCH_FAILURE')
 
-export function requestData () {
-  return {
-    type: 'REQUEST_DATA'
-  }
-}
-
-export function loadData (usd, eur) {
-  return {
-    type: 'LOAD_DATA',
-    payload: {
-      usd,
-      eur
-    }
-  }
-}
-
-export function fetchData () {
+export const fetchData = () => {
   return dispatch => {
     const data = cache.get('rates')
     if (data) {
-      return dispatch(loadData(data.usd, data.eur))
+      return dispatch(fetchSuccess(data))
     }
-    dispatch(requestData())
+    dispatch(fetchRequest())
     return fetch('https://meduza.io/api/v3/stock/all/')
-      .then(response => {
-        return response.json()
-      })
+      .then(response => response.json())
       .then(({ usd, eur }) => {
         cache.set('rates', { usd: usd.current, eur: eur.current }, 60)
-        cache.set('latest', { usd: usd.current, eur: eur.current })
-        return dispatch(loadData(usd.current, eur.current))
+        return dispatch(fetchSuccess({ usd, eur }))
       })
-      .catch(() => {
-        const { usd, eur } = cache.get('latest')
-        return dispatch(loadData(usd, eur))
-      })
-  }
-}
-
-export function doSwap () {
-  return {
-    type: 'SWAP'
+      .catch(() => dispatch(fetchFailure()))
   }
 }
