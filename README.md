@@ -1,5 +1,8 @@
 # Currency Converter
 
+[![Build Status](https://travis-ci.org/sadorlovsky/currency-converter.svg?branch=development)](https://travis-ci.org/sadorlovsky/currency-converter)
+[![Coverage Status](https://coveralls.io/repos/github/sadorlovsky/currency-converter/badge.svg?branch=development)](https://coveralls.io/github/sadorlovsky/currency-converter?branch=development)
+
 Chrome extension for converting from USD and EUR to RUB by current exchange rate.
 
 ![](http://i.imgur.com/F8bLKwT.jpg)
