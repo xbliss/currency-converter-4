@@ -10,8 +10,6 @@
   },
 
   "rules": {
-    "complexity": "off",
-    "no-undefined": "off",
-    "no-extra-parens": ["error", "functions"]
+    "complexity": "off"
   }
 }
