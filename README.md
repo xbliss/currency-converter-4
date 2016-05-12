@@ -7,13 +7,11 @@ Chrome extension for converting from USD and EUR to RUB by current exchange rate
 
 ![](http://i.imgur.com/F8bLKwT.jpg)
 
-It uses [react](https://github.com/facebook/react) and [redux](https://github.com/reactjs/redux).
-
 ## Install
 
 Link to Chrome Web Store will appear here soon.
 
-## Develop
+## Development
 
 ```bash
 git clone https://github.com/sadorlovsky/currency-converter.git
@@ -25,3 +23,7 @@ Webpack used for building scripts. Then:
 - select `Developer mode`
 - click on `Load unpacked extension`
 - and choose `app` folder
+
+## License
+
+MIT © [Zach Orlovsky](https://orlovsky.rocks)
