@@ -10,6 +10,7 @@
   },
 
   "rules": {
-    "complexity": "off"
+    "complexity": "off",
+    "object-property-newline": "off"
   }
 }
