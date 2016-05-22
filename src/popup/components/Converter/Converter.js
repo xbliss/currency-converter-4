@@ -2,11 +2,9 @@ import React, { Component } from 'react'
 import css from 'react-css-modules'
 import FaArrowLeft from 'react-icons/lib/fa/arrow-left'
 import FaArrowRight from 'react-icons/lib/fa/arrow-right'
-import FaUsd from 'react-icons/lib/fa/dollar'
-import FaEur from 'react-icons/lib/fa/eur'
-import FaRouble from 'react-icons/lib/fa/rouble'
 import { isNaN, toNumber } from 'lodash'
 import styles from './Converter.sss'
+import CurrencyIcon from './CurrencyIcon'
 
 @css(styles)
 export default class Converter extends Component {
@@ -53,12 +51,13 @@ export default class Converter extends Component {
   }
 
   render () {
-    const currentIcon = this.props.current === 'USD' ? <FaUsd /> : <FaEur />
     return (
       <div styleName='converter'>
-        <div styleName='icon'>
-          {!this.props.swap ? currentIcon : <FaRouble />}
-        </div>
+        <CurrencyIcon
+          currency={this.props.current}
+          swap={this.props.swap}
+          convertToRUB
+        />
         <input
           autoFocus
           placeholder='0'
@@ -71,9 +70,10 @@ export default class Converter extends Component {
           <FaArrowRight styleName='right' />
         </div>
         <input styleName='input' value={this.convert()} />
-        <div styleName='icon'>
-          {this.props.swap ? currentIcon : <FaRouble />}
-        </div>
+        <CurrencyIcon
+          currency={this.props.current}
+          swap={this.props.swap}
+        />
       </div>
     )
   }
