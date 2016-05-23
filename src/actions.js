@@ -23,6 +23,9 @@ export const fetchData = () => {
         cache.set('rates', { usd: usd.current, eur: eur.current }, 60)
         return dispatch(fetchSuccess({ usd: usd.current, eur: eur.current }))
       })
-      .catch(() => dispatch(fetchFailure()))
+      .catch(err => {
+        console.log(err)
+        dispatch(fetchFailure())
+      })
   }
 }
