@@ -14,7 +14,12 @@ export default class Rate extends Component {
     const showSpinner = () => <Spinner spinnerName='three-bounce' noFadeIn />
     const showValue = () => {
       const value = this.props.accuracy ? this.props.value.toFixed(2) : Math.round(this.props.value)
-      return <div onClick={() => this.props.toggleAccuracy()}>{value}<FaRouble styleName='rub' /></div>
+      return (
+        <div onClick={() => this.props.toggleAccuracy()}>
+          {value}
+          <FaRouble styleName='rub' />
+        </div>
+      )
     }
 
     return (
