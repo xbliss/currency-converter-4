@@ -36,7 +36,6 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "isomorphic-fetch": "^2.2.1",
-    "lodash": "^4.12.0",
     "lscache": "^1.0.5",
     "react": "^15.1.0",
     "react-css-modules": "^3.7.6",

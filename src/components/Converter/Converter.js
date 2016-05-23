@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import css from 'react-css-modules'
 import FaArrowLeft from 'react-icons/lib/fa/arrow-left'
 import FaArrowRight from 'react-icons/lib/fa/arrow-right'
-import { isNaN, toNumber } from 'lodash'
 import styles from './Converter.sss'
 import CurrencyIcon from './CurrencyIcon'
 
@@ -16,9 +15,9 @@ export default class Converter extends Component {
   }
 
   handleChange (value) {
-    if (!isNaN(toNumber(value))) {
+    if (!isNaN(value)) {
       this.setState({
-        input: toNumber(value)
+        input: Number(value)
       })
     }
   }
