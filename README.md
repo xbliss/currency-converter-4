@@ -1,22 +1,22 @@
 # Currency Converter
 
-[![Build Status](https://travis-ci.org/sadorlovsky/currency-converter.svg?branch=development)](https://travis-ci.org/sadorlovsky/currency-converter)
-[![Coverage Status](https://coveralls.io/repos/github/sadorlovsky/currency-converter/badge.svg?branch=development)](https://coveralls.io/github/sadorlovsky/currency-converter?branch=development)
+[![Build Status](https://travis-ci.org/sadorlovsky/currency-converter.svg?branch=master)](https://travis-ci.org/sadorlovsky/currency-converter)
+[![Coverage Status](https://coveralls.io/repos/github/sadorlovsky/currency-converter/badge.svg?branch=master)](https://coveralls.io/github/sadorlovsky/currency-converter?branch=master)
 
 Chrome extension for converting from USD and EUR to RUB by current exchange rate.
 
 ![](http://i.imgur.com/F8bLKwT.jpg)
 
-## Install
+### Install
 
 Link to Chrome Web Store will appear here soon.
 
-## Development
+### Development
 
 ```bash
-git clone https://github.com/sadorlovsky/currency-converter.git
-npm install
-npm start # run webpack in watch mode
+$ git clone https://github.com/sadorlovsky/currency-converter.git
+$ npm install
+$ npm start # run webpack in watch mode
 ```
 Webpack used for building scripts. Then:
 - go to chrome and open `chrome://extensions/`
