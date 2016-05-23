@@ -1,5 +1,5 @@
 import test from 'ava'
-import reducer from '../src/shared/reducer'
+import reducer from './reducer'
 
 const initialState = {
   isFetching: false,

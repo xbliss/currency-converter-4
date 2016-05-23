@@ -10,19 +10,18 @@
   },
   "scripts": {
     "lint": "eslint src test",
-    "test": "CONFIG=$(pwd)/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=TEST nyc ava",
+    "test": "CONFIG=$(pwd)/webpack/webpack.test.config.js BABEL_DISABLE_CACHE=1 NODE_ENV=TEST nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "start": "webpack --config webpack.dev.config --watch",
-    "build:dev": "webpack --config webpack.dev.config",
-    "build:prod": "NODE_ENV=production webpack --config webpack.prod.config -p",
+    "start": "webpack --config webpack/webpack.dev.config --watch",
+    "build:dev": "webpack --config webpack/webpack.dev.config",
+    "build:prod": "NODE_ENV=production webpack --config webpack/webpack.prod.config -p",
     "pack": "bestzip package.zip app/*",
     "precommit": "npm run lint && npm run test",
     "prepush": "npm run lint && npm run test"
   },
   "ava": {
     "files": [
-      "test",
-      "src/popup/**/*.test.js"
+      "src/**/*.test.js"
     ],
     "babel": "inherit",
     "require": [

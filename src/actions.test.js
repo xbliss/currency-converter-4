@@ -2,7 +2,7 @@ import test from 'ava'
 import configureMockStore from 'redux-mock-store'
 import nock from 'nock'
 import thunk from 'redux-thunk'
-import * as actions from '../src/shared/actions'
+import * as actions from './actions'
 
 const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares)

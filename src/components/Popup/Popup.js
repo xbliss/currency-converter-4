@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import Switch from '../Switch/Switch'
 import Rate from '../Rate/Rate'
 import Converter from '../Converter/Converter'
-import { toggleCurrency, toggleAccuracy, fetchData, doSwap } from '../../../shared/actions'
+import { toggleCurrency, toggleAccuracy, fetchData, doSwap } from '../../actions'
 import styles from './Popup.sss'
 
 const mapStateToProps = state => {

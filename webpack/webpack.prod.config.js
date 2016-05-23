@@ -1,14 +1,12 @@
+const path = require('path')
 const webpack = require('webpack')
 const cssnext = require('postcss-cssnext')
 
 module.exports = {
-  entry: {
-    background: './src/background/index.js',
-    popup: './src/popup/index.js'
-  },
+  entry: path.join(__dirname, '..', 'src', 'index.js'),
   output: {
     path: 'app/scripts',
-    filename: '[name].js'
+    filename: 'popup.js'
   },
   module: {
     loaders: [
