@@ -33,20 +33,15 @@ export default class Converter extends Component {
   }
 
   convert () {
-    const rate = this.props[this.props.current.toLowerCase()]
-    if (!this.props.swap) {
-      const result = this.state.input * rate
-      return this.props.accuracy ? result.toFixed(2) : Math.round(result)
+    const result = () => {
+      return this.props.swap ?
+      this.state.input / this.props[this.props.current.toLowerCase()] :
+      this.state.input * this.props[this.props.current.toLowerCase()]
     }
-    return this.reverseConvert()
-  }
-
-  reverseConvert () {
-    const result = this.state.input / this.props[this.props.current.toLowerCase()]
-    if ((result > 0) && (result < 1)) {
-      return '< 1'
+    const accuracy = value => {
+      return this.props.accuracy ? value.toFixed(2) : Math.round(value)
     }
-    return result.toFixed(2)
+    return this.props.accuracy ? result() : accuracy(result())
   }
 
   render () {
