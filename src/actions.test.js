@@ -31,7 +31,7 @@ test('toggle currency to eur', t => {
 test('toggle accuracy', t => {
   const expected = {
     type: 'TOGGLE_ACCURACY',
-    payload: null
+    payload: undefined
   }
   t.deepEqual(actions.toggleAccuracy(), expected)
 })
