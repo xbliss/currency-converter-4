@@ -20,9 +20,6 @@
     "prepush": "npm run lint && npm run test"
   },
   "ava": {
-    "files": [
-      "src/**/*.test.js"
-    ],
     "babel": "inherit",
     "require": [
       "babel-register"
