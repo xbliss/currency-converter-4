@@ -10,6 +10,6 @@
   },
 
   "rules": {
-    "object-property-newline": "off"
+    "max-statements-per-line": "off"
   }
 }
