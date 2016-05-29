@@ -7,7 +7,7 @@
   "compact": false,
   "sourceMaps": "inline",
   "env": {
-    "TEST": {
+    "test": {
       "plugins": [
         [
           "babel-plugin-webpack-loaders",
