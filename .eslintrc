@@ -8,8 +8,4 @@
   "settings": {
     "import/ignore": ["node_modules", ".(css|sss)$"]
   },
-
-  "rules": {
-    "max-statements-per-line": "off"
-  }
 }
