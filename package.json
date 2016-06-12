@@ -1,6 +1,6 @@
 {
   "name": "@sadorlovsky/currency-converter",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Currency converter extension for chrome",
   "author": "Zach Orlovsky <sadorlovsky@gmail.com>",
   "license": "MIT",

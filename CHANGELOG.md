@@ -2,6 +2,10 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## [0.6.1] - 2016-06-12
+### Changed
+- update dependencies
+
 ## [0.6.0] - 2016-05-02
 ### Added
 - swap feature
@@ -43,6 +47,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-03-19
 
+[0.6.1]: https://github.com/sadorlovsky/currency-converter/compare/v0.6.0...v0.6.1
 [0.6.0]: https://github.com/sadorlovsky/currency-converter/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/sadorlovsky/currency-converter/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/sadorlovsky/currency-converter/compare/v0.4.0...v0.5.0
