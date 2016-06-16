@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import css from 'react-css-modules'
 import FaArrowLeft from 'react-icons/lib/fa/arrow-left'
 import FaArrowRight from 'react-icons/lib/fa/arrow-right'
-import styles from './Converter.sss'
+import styles from './Converter.css'
 import CurrencyIcon from './CurrencyIcon'
 
 @css(styles)

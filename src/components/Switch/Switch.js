@@ -3,7 +3,7 @@ import css from 'react-css-modules'
 import classnames from 'classnames'
 import FaUsd from 'react-icons/lib/fa/dollar'
 import FaEur from 'react-icons/lib/fa/eur'
-import styles from './Switch.sss'
+import styles from './Switch.css'
 
 const Switch = props => {
   return (

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import css from 'react-css-modules'
 import Spinner from 'react-spinkit'
 import FaRouble from 'react-icons/lib/fa/rouble'
-import styles from './Rate.sss'
+import styles from './Rate.css'
 
 @css(styles)
 export default class Rate extends Component {

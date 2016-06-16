@@ -10,7 +10,7 @@
   },
   "scripts": {
     "eslint": "eslint src test",
-    "stylelint": "stylelint src/components/**/*.sss --syntax sugarss",
+    "stylelint": "stylelint src/components/**/*.css",
     "lint": "npm run eslint & npm run stylelint",
     "test": "CONFIG=$(pwd)/webpack/webpack.config.test.js BABEL_DISABLE_CACHE=1 NODE_ENV=test nyc ava",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",

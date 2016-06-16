@@ -1,0 +1,50 @@
+.converter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+}
+
+.input {
+  all: initial;
+  box-sizing: border-box;
+  width: 120px;
+  height: 50px;
+  border: 4px solid #442b48;
+  font-size: 1.5rem;
+  padding: 5px;
+  font-family: 'Montserrat';
+}
+
+.swap {
+  box-sizing: border-box;
+  height: 100%;
+  background-color: #442b48;
+  color: #fff;
+  padding: 0 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.swap:active {
+  background-color: color(#442b48 lightness(30%));
+}
+
+.swap:hover .left {
+  transform: translateX(-5px);
+}
+
+.swap:hover .right {
+  transform: translateX(5px);
+}
+
+.left,
+.right {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  transition: transform 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+}

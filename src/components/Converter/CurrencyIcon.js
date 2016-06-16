@@ -3,7 +3,7 @@ import css from 'react-css-modules'
 import FaUsd from 'react-icons/lib/fa/dollar'
 import FaEur from 'react-icons/lib/fa/eur'
 import FaRouble from 'react-icons/lib/fa/rouble'
-import styles from './CurrencyIcon.sss'
+import styles from './CurrencyIcon.css'
 
 const currencies = {
   'USD': <FaUsd />,
