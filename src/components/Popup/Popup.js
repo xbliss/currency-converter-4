@@ -2,6 +2,7 @@ import React from 'react'
 import css from 'react-css-modules'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import compose from 'recompose/compose'
 import Switch from '../Switch/Switch'
 import Rate from '../Rate/Rate'
 import Converter from '../Converter/Converter'
@@ -20,7 +21,12 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ toggleCurrency, toggleAccuracy, fetchData, doSwap }, dispatch)
+  return bindActionCreators({
+    toggleCurrency,
+    toggleAccuracy,
+    fetchData,
+    doSwap
+  }, dispatch)
 }
 
 const App = props => {
@@ -49,4 +55,9 @@ const App = props => {
   )
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(css(styles)(App))
+const enchance = compose(
+  connect(mapStateToProps, mapDispatchToProps),
+  css(styles)
+)
+
+export default enchance(App)

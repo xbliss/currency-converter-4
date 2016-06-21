@@ -28,4 +28,4 @@ const Switch = props => {
   )
 }
 
-export default css(styles)(Switch)
+export default css(Switch, styles)

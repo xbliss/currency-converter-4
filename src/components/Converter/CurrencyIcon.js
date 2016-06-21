@@ -18,4 +18,4 @@ const CurrencyIcon = ({ currency, swap, convertToRUB }) => {
   return <div styleName='icon'>{icon}</div>
 }
 
-export default css(styles)(CurrencyIcon)
+export default css(CurrencyIcon, styles)
