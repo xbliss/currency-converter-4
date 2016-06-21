@@ -55,9 +55,9 @@ const App = props => {
   )
 }
 
-const enchance = compose(
+const enhance = compose(
   connect(mapStateToProps, mapDispatchToProps),
   css(styles)
 )
 
-export default enchance(App)
+export default enhance(App)

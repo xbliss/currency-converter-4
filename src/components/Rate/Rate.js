@@ -25,7 +25,7 @@ const Rate = props => {
   )
 }
 
-const enchance = compose(
+const enhance = compose(
   lifecycle({
     componentDidMount () {
       this.props.fetchData()
@@ -33,4 +33,4 @@ const enchance = compose(
   }),
   css(styles)
 )
-export default enchance(Rate)
+export default enhance(Rate)
