@@ -3,7 +3,8 @@ const webpack = require('webpack')
 const cssnext = require('postcss-cssnext')
 
 module.exports = {
-  entry: path.join(__dirname, '..', 'src', 'index.js'),
+  devtool: 'source-map',
+  entry: path.resolve('extension', 'index.js'),
   output: {
     path: 'app/scripts',
     filename: 'popup.js'
