@@ -1,13 +1,14 @@
 import React from 'react'
 import css from 'react-css-modules'
 import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
+import { connectState } from 'redux-state'
 import compose from 'recompose/compose'
 import Switch from '../Switch/Switch'
 import Rate from '../Rate/Rate'
 import Converter from '../Converter/Converter'
 import { toggleCurrency, toggleAccuracy, fetchData, doSwap } from '../../actions'
 import styles from './Popup.css'
+import reducer from '../../reducer'
 
 const mapStateToProps = state => {
   return {
@@ -29,7 +30,7 @@ const mapDispatchToProps = dispatch => {
   }, dispatch)
 }
 
-const App = props => {
+const Popup = props => {
   return (
     <div>
       <Switch
@@ -56,8 +57,8 @@ const App = props => {
 }
 
 const enhance = compose(
-  connect(mapStateToProps, mapDispatchToProps),
+  connectState(mapStateToProps, mapDispatchToProps, undefined, reducer),
   css(styles)
 )
 
-export default enhance(App)
+export default enhance(Popup)

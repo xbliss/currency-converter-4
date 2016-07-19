@@ -1,5 +1,3 @@
-import { handleActions } from 'redux-actions'
-
 const initialState = {
   isFetching: false,
   current: 'USD',
@@ -9,17 +7,26 @@ const initialState = {
   swap: false
 }
 
-const reducer = handleActions({
-  'TOGGLE_CURRENCY': (state, action) => ({ ...state, current: action.payload }),
-  'TOGGLE_ACCURACY': state => ({ ...state, accuracy: !state.accuracy }),
-  'FETCH_REQUEST': state => ({ ...state, isFetching: true }),
-  'FETCH_SUCCESS': (state, action) => ({
-    ...state,
-    usd: action.payload.usd,
-    eur: action.payload.eur,
-    isFetching: false
-  }),
-  'SWAP': state => ({ ...state, swap: !state.swap })
-}, initialState)
+const reducer = (state = initialState, action = {}) => {
+  switch(action.type) {
+    case 'TOGGLE_CURRENCY':
+      return { ...state, current: action.payload }
+    case 'TOGGLE_ACCURACY':
+      return { ...state, accuracy: !state.accuracy }
+    case 'FETCH_REQUEST':
+      return { ...state, isFetching: true }
+    case 'FETCH_SUCCESS':
+      return {
+        ...state,
+        usd: action.payload.usd,
+        eur: action.payload.eur,
+        isFetching: false
+      }
+    case 'SWAP':
+      return { ...state, swap: !state.swap }
+    default:
+      return state
+  }
+}
 
 export default reducer
