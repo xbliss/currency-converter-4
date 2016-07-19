@@ -35,6 +35,9 @@
       "src/**/*.js"
     ]
   },
+  "files": [
+    "src"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "isomorphic-fetch": "^2.2.1",
