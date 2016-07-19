@@ -7,8 +7,9 @@ const initialState = {
   swap: false
 }
 
+/* eslint-disable complexity */
 const reducer = (state = initialState, action = {}) => {
-  switch(action.type) {
+  switch (action.type) {
     case 'TOGGLE_CURRENCY':
       return { ...state, current: action.payload }
     case 'TOGGLE_ACCURACY':

@@ -77,6 +77,7 @@ test('fetch data failure', async t => {
   t.deepEqual(JSON.stringify(store.getActions()), JSON.stringify(expectedActions))
 })
 
+/* eslint-disable fp/no-mutation */
 test('get data from cache', async t => {
   global.window = { localStorage }
   localStorage.setItem('lscache-rates', JSON.stringify({ usd: 67, eur: 76 }))
